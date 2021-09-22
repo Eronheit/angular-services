@@ -9,10 +9,22 @@ import { CursosService } from './cursos.service';
 export class CursosComponent implements OnInit {
 
   cursos: string[] = [];
-  cursosService: CursosService;
 
-  constructor() {
-    this.cursosService = new CursosService();
+  /* Método 1 com injeção de dependência */
+  //cursosService: CursosService;
+
+  constructor(
+    /* Método 1 com injeção de dependência */
+    //_cursosService: CursosService
+
+    /* Método 2 com injeção de dependência */
+    private cursosService: CursosService
+  ) {
+    /* Sem injeção de dependência */
+    //this.cursosService = new CursosService();
+
+    /* Método 1 com injeção de dependência */
+    //this.cursosService = _cursosService;
   }
 
   ngOnInit():void {
